@@ -1,0 +1,47 @@
+:root {
+  --foreground-rgb: var(--mantine-color-dark-0);
+  --background-rgb: var(--mantine-color-dark-7);
+  --color-scheme-toggle-icon-rgb: var(--mantine-color-blue-7);
+  --header-bar-separator-rgb: var(--mantine-color-blue-7);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-color-scheme="light"]) {
+    --foreground-rgb: var(--mantine-color-black);
+    --background-rgb: var(--mantine-color-white);
+    --color-scheme-toggle-icon-rgb: var(--mantine-color-yellow-5);
+    --header-bar-separator-rgb: var(--mantine-color-yellow-5);
+    color-scheme: dark;
+  }
+
+  :root:not([data-color-scheme="light"]) .colorSchemeToggleIconSun {
+    display: block;
+  }
+
+  :root:not([data-color-scheme="light"]) .colorSchemeToggleIconStars {
+    display: none;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+button.colorSchemeToggleIcon {
+  border-color: var(--color-scheme-toggle-icon-rgb);
+  color: var(--color-scheme-toggle-icon-rgb);
+}
+
+.header {
+  border-bottom: 1px solid var(--header-bar-separator-rgb);
+}
+
+.colorSchemeToggleIconSun {
+  display: none;
+}
+
+.colorSchemeToggleIconStars {
+  display: block;
+}
